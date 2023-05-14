@@ -1,0 +1,35 @@
+<form (submit)="save()">
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input type="text" matInput name="title" [(ngModel)]="tempTodo.title">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input type="text" matInput name="description" [(ngModel)]="tempTodo.description">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select name="status" [(ngModel)]="tempTodo.status">
+            <mat-option value="new">New</mat-option>
+            <mat-option value="in progress">In Progress</mat-option>
+            <mat-option value="done">Done</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="actions">
+        <button mat-flat-button type="button" (click)="cancel()">Cancel</button>
+        <button mat-flat-button color="primary">{{todo.title ? 'Update' : 'Create'}}</button>
+    </div>
+
+    <ng-container *ngIf="todo.files && todo.files.length">
+        <h3>Attachments</h3>
+        <ul>
+            <li *ngFor="let file of todo.files">
+                {{file.name}}
+
+                <a href="{{assetsUrl}}/{{file.filename}}" target="_blank" download mat-icon-button>
+                    <mat-icon>download</mat-icon>
+                </a>
+            </li>
+        </ul>
+    </ng-container>
+</form>

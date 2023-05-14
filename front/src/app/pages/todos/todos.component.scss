@@ -1,0 +1,17 @@
+mat-drawer {
+    width: 300px;
+    padding: 20px;
+}
+
+mat-drawer-content {
+    background-color: #fff;
+    padding: 20px;
+
+    h1 {
+        margin-bottom: 24px;
+
+        button {
+            float: right;
+        }
+    }
+}

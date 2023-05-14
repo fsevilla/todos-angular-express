@@ -1,0 +1,15 @@
+<mat-drawer-container>
+    <mat-drawer #drawer mode="over" position="end">
+        <h2>{{todo.title ? 'DETAILS': 'NEW'}}</h2>
+        <app-edit-todo [todo]="todo" (onCancel)="drawer.close()" (onSave)="drawer.close(); version = version + 1"></app-edit-todo>
+    </mat-drawer>
+    <mat-drawer-content>
+        <h1>
+            Todos
+            <button mat-mini-fab color="primary" (click)="create(); drawer.open()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </h1>
+        <app-todos-list [version]="version" (onSelect)="doOnSelect($event); drawer.open()"></app-todos-list>
+    </mat-drawer-content>
+</mat-drawer-container>

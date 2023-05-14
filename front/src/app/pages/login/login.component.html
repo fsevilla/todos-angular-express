@@ -1,0 +1,16 @@
+<form (submit)="login()">
+    <h1>Log in</h1>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" name="email" matInput [(ngModel)]="credentials.email">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" name="password" matInput [(ngModel)]="credentials.password">
+    </mat-form-field>
+    <p class="error" *ngIf="error">Invalid credentials</p>
+    <div>
+        Don't have an account? <a routerLink="/signup">Sign up here</a>
+        <button mat-flat-button color="primary">Log in</button>
+    </div>
+</form>

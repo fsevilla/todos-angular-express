@@ -1,0 +1,21 @@
+form {
+    max-width: 600px;
+    margin: auto;
+
+    mat-form-field {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    div {
+        text-align: right;
+
+        button {
+            margin-left: 12px;
+        }
+    }
+
+    p.error {
+        color: red;
+    }
+}

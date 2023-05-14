@@ -1,0 +1,15 @@
+<div class="columns">
+    <div>
+        <span>New</span>
+        <app-todo-details (onSelect)="doOnSelect($event)" (onDelete)="getTodos()" [item]="todo" *ngFor="let todo of todosGrid.new"></app-todo-details>
+    </div>
+    <div>
+        <span>In Progress</span>
+        <app-todo-details (onSelect)="doOnSelect($event)" (onDelete)="getTodos()" [item]="todo" *ngFor="let todo of todosGrid.inProgress"></app-todo-details>
+    </div>
+    <div>
+        <span>Complete</span>
+        <app-todo-details (onSelect)="doOnSelect($event)" (onDelete)="getTodos()" [item]="todo" *ngFor="let todo of todosGrid.complete"></app-todo-details>
+    </div>
+</div>
+
